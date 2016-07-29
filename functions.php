@@ -82,10 +82,6 @@ function mention_wp_public_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'mention_wp_public_assets' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Customizer additions.
