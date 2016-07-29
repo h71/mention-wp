@@ -40,11 +40,21 @@
 		} );
 	});
 
-	// Header text
+	// Header button text
 	wp.customize( 'mention_header_btn_text', function( value ) {
 		value.bind( function( to ) {
 			$('.headerBtn').text( to );
 		} );
 	});
+
+	// Site title color
+	wp.customize( 'mention_title_color', function( value ) {
+		value.bind( function( to ) {
+			$('.site-title').css( 
+			'color', to );
+		} );
+	});
+
+
 
 } )( jQuery );

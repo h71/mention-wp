@@ -33,6 +33,12 @@ function mention_wp_customize_register( $wp_customize ) {
 		'transport' => 'postMessage',
 	));
 
+	$wp_customize->add_setting('mention_title_color', array(
+		'default' => '',
+		'type' => 'theme_mod',
+		'transport' => 'postMessage',
+	));
+
 	$wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
 		'mention_header_text_control',
@@ -52,6 +58,17 @@ function mention_wp_customize_register( $wp_customize ) {
 			'settings' => 'mention_header_btn_text',
 		)
 	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		'mention_title_color_control',
+		array(
+			'label' => __('Title Color', 'mention-wp'),
+			'section' => 'colors',
+			'settings' => 'mention_title_color',
+			'type' => 'color'
+		)
+	));
 }
 add_action( 'customize_register', 'mention_wp_customize_register' );
 
@@ -68,7 +85,7 @@ function header_output() {
   ?>
   <!--Customizer CSS--> 
   <style type="text/css">
-       <?php generate_css('h1.site-title', 'color', 'header_textcolor', '#'); ?> 
+       <?php generate_css('.site-title', 'color', 'mention_title_color', ''); ?> 
   </style> 
   <!--/Customizer CSS-->
   <?php
