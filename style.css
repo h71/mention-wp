@@ -876,7 +876,7 @@ footer {
     display: table-cell
 }
 
-.headingTitle {
+.headingTitle h1 {
     color: #22282B;
     font-size: 3rem;
     font-weight: 700;
