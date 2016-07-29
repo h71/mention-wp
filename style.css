@@ -286,6 +286,10 @@ a {
     color: #1798de
 }
 
+body.admin-bar .topbar, body.admin-bar .progressbarWrapper{
+    top: 28px;
+} 
+
 .authorDesc,
 .authorInner,
 .firstfooterNav,
