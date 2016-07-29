@@ -63,6 +63,17 @@ add_action( 'after_setup_theme', 'mention_wp_setup' );
 
 
 /**
+ * Load public assets
+ */
+function mention_wp_public_assets() {
+
+	wp_enqueue_style( 'mention-wp-style', get_template_directory_uri() . '/style.css', array(), false, 'all' );
+	wp_enqueue_script( 'mention-wp-js', get_template_directory_uri() . '/js/main.js', array(), false, true );
+
+}
+add_action( 'wp_enqueue_scripts', 'mention_wp_public_assets' );
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
