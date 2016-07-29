@@ -18,7 +18,7 @@
 			$( '.site-description' ).text( to );
 		} );
 	} );
-	// Header text color.
+	// Site title text color
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {
@@ -33,4 +33,18 @@
 			}
 		} );
 	} );
+	// Header text
+	wp.customize( 'mention_header_text', function( value ) {
+		value.bind( function( to ) {
+			$('.header-text').text( to );
+		} );
+	});
+
+	// Header text
+	wp.customize( 'mention_header_btn_text', function( value ) {
+		value.bind( function( to ) {
+			$('.headerBtn').text( to );
+		} );
+	});
+
 } )( jQuery );

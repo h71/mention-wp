@@ -28,9 +28,9 @@
           <div class="topbarCont">
             <div class="topbarInfo">
               <!-- Add your own tagline here -->
-              <span><?php bloginfo( 'description' ); ?></span>
+              <span class="header-text"><?php echo get_theme_mod( 'mention_header_text', '' ); ?></span>
               <!-- Also, change title, link and text of the button.-->
-              <a title="Get free quote" href="#"><?php ### ?></a>
+              <a class="headerBtn" href="<?php echo get_theme_mod( 'header_btn_url', '#' ); ?>" title="<?php echo get_theme_mod( 'mention_header_btn_text', __( 'Get free quote', 'mention-wp' ) ); ?>"><?php echo get_theme_mod( 'mention_header_btn_text', __( 'Get free quote', 'mention-wp' ) ); ?></a>
             </div>
           </div>
         </header>

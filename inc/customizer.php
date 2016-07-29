@@ -13,7 +13,45 @@
 function mention_wp_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+	$wp_customize->add_section( 'mention_wp_header', 
+	        array(
+	           'title' => __( 'Header Options', 'mention-wp' ),
+	           'priority' => 35,
+	           'capability' => 'edit_theme_options'
+	        )
+        );
+
+	$wp_customize->add_setting('mention_header_text', array(
+		'default' => '',
+		'type' => 'theme_mod',
+		'transport' => 'postMessage',
+	));
+
+	$wp_customize->add_setting('mention_header_btn_text', array(
+		'default' => '',
+		'type' => 'theme_mod',
+		'transport' => 'postMessage',
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		'mention_header_text_control',
+		array(
+			'label' => __('Header Text', 'mention-wp'),
+			'section' => 'mention_wp_header',
+			'settings' => 'mention_header_text',
+		)
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		'mention_header_btn_text_control',
+		array(
+			'label' => __('Header Button Text', 'mention-wp'),
+			'section' => 'mention_wp_header',
+			'settings' => 'mention_header_btn_text',
+		)
+	));
 }
 add_action( 'customize_register', 'mention_wp_customize_register' );
 
