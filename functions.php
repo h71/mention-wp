@@ -60,3 +60,14 @@ function mention_wp_setup() {
 }
 endif; // mention_wp_setup
 add_action( 'after_setup_theme', 'mention_wp_setup' );
+
+
+/**
+ * Implement the Custom Header feature.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/customizer.php';
