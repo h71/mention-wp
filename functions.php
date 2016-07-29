@@ -1,4 +1,13 @@
 <?php
+
+// Add needed class name to menu items
+function add_classes_on_li($classes, $item, $args) {
+  $classes[] = 'navLink';
+  return $classes;
+}
+add_filter('nav_menu_css_class','add_classes_on_li',1,3);
+
+
 if ( ! function_exists( 'mention_wp_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
