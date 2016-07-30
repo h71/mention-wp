@@ -77,6 +77,7 @@ add_action( 'after_setup_theme', 'mention_wp_setup' );
 function mention_wp_public_assets() {
 
 	wp_enqueue_style( 'mention-wp-style', get_template_directory_uri() . '/style.css', array(), false, 'all' );
+	wp_enqueue_style( 'mention-wp-font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array(), false, 'all' );
 	wp_enqueue_script( 'mention-wp-js', get_template_directory_uri() . '/js/main.js', array(), false, true );
 
 }
