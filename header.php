@@ -11,7 +11,6 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,700' rel='stylesheet' type='text/css'>
     <!-- pingback -->
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -30,7 +29,7 @@
               <!-- Add your own tagline here -->
               <span class="header-text"><?php echo get_theme_mod( 'mention_header_text', '' ); ?></span>
               <!-- Also, change title, link and text of the button.-->
-              <a class="headerBtn" href="<?php echo get_theme_mod( 'header_btn_url', '#' ); ?>" title="<?php echo get_theme_mod( 'mention_header_btn_text', __( 'Get free quote', 'mention-wp' ) ); ?>"><?php echo get_theme_mod( 'mention_header_btn_text', __( 'Get free quote', 'mention-wp' ) ); ?></a>
+              <a class="headerBtn" href="<?php echo get_theme_mod( 'mention_header_btn_url', '#' ); ?>" title="<?php echo get_theme_mod( 'mention_header_btn_text', __( 'Get free quote', 'mention-wp' ) ); ?>"><?php echo get_theme_mod( 'mention_header_btn_text', __( 'Get free quote', 'mention-wp' ) ); ?></a>
             </div>
           </div>
         </header>

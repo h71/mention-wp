@@ -20,6 +20,13 @@ function mention_wp_customize_register( $wp_customize ) {
 	           'capability' => 'edit_theme_options'
 	        )
         );
+    $wp_customize->add_section( 'mention_social', 
+        array(
+           'title' => __( 'Social and sharing', 'mention-wp' ),
+           'priority' => 35,
+           'capability' => 'edit_theme_options'
+        )
+    );
 
 	$wp_customize->add_setting('mention_header_text', array(
 		'default' => '',
@@ -33,7 +40,19 @@ function mention_wp_customize_register( $wp_customize ) {
 		'transport' => 'postMessage',
 	));
 
+	$wp_customize->add_setting('mention_header_btn_url', array(
+		'default' => '',
+		'type' => 'theme_mod',
+		'transport' => 'postMessage',
+	));
+
 	$wp_customize->add_setting('mention_title_color', array(
+		'default' => '',
+		'type' => 'theme_mod',
+		'transport' => 'postMessage',
+	));
+
+	$wp_customize->add_setting('mention_share_text', array(
 		'default' => '',
 		'type' => 'theme_mod',
 		'transport' => 'postMessage',
@@ -43,7 +62,7 @@ function mention_wp_customize_register( $wp_customize ) {
 		$wp_customize,
 		'mention_header_text_control',
 		array(
-			'label' => __('Header Text', 'mention-wp'),
+			'label' => __('Header text', 'mention-wp'),
 			'section' => 'mention_wp_header',
 			'settings' => 'mention_header_text',
 		)
@@ -53,7 +72,7 @@ function mention_wp_customize_register( $wp_customize ) {
 		$wp_customize,
 		'mention_header_btn_text_control',
 		array(
-			'label' => __('Header Button Text', 'mention-wp'),
+			'label' => __('Header button Text', 'mention-wp'),
 			'section' => 'mention_wp_header',
 			'settings' => 'mention_header_btn_text',
 		)
@@ -61,14 +80,35 @@ function mention_wp_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control(new WP_Customize_Control(
 		$wp_customize,
+		'mention_header_btn_url_control',
+		array(
+			'label' => __('Header button URL', 'mention-wp'),
+			'section' => 'mention_wp_header',
+			'settings' => 'mention_header_btn_url',
+		)
+	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
 		'mention_title_color_control',
 		array(
-			'label' => __('Title Color', 'mention-wp'),
+			'label' => __('Title color', 'mention-wp'),
 			'section' => 'colors',
 			'settings' => 'mention_title_color',
 			'type' => 'color'
 		)
 	));
+
+	$wp_customize->add_control(new WP_Customize_Control(
+		$wp_customize,
+		'mention_share_text_control',
+		array(
+			'label' => __('Text before share icons', 'mention-wp'),
+			'section' => 'mention_social',
+			'settings' => 'mention_share_text',
+		)
+	));
+
 }
 add_action( 'customize_register', 'mention_wp_customize_register' );
 

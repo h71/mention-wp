@@ -47,11 +47,25 @@
 		} );
 	});
 
+	// Header button URL
+	wp.customize( 'mention_header_btn_url', function( value ) {
+		value.bind( function( to ) {
+			$('.headerBtn').attr( 'href', to );
+		} );
+	});
+
 	// Site title color
 	wp.customize( 'mention_title_color', function( value ) {
 		value.bind( function( to ) {
 			$('.site-title').css( 
 			'color', to );
+		} );
+	});
+
+	// Text before social icons
+	wp.customize( 'mention_share_text', function( value ) {
+		value.bind( function( to ) {
+			$('.connect span').text( to );
 		} );
 	});
 
