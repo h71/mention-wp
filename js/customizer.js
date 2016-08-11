@@ -69,6 +69,27 @@
 		} );
 	});
 
+	// Font Icons in footer social icons
+	wp.customize( 'mention_share_icon_1', function( value ) {
+		value.bind( function( to ) {
+			$('.lastfooterSocial.social-icon-1 i').toggleClass( to );
+		} );
+	});
+
+	// Font Icons in footer social icons
+	wp.customize( 'mention_share_icon_2', function( value ) {
+		value.bind( function( to ) {
+			$('.lastfooterSocial.social-icon-2 i').toggleClass( to );
+		} );
+	});
+
+	// Font Icons in footer social icons
+	wp.customize( 'mention_share_icon_3', function( value ) {
+		value.bind( function( to ) {
+			$('.lastfooterSocial.social-icon-3 i').toggleClass( to );
+		} );
+	});
+
 
 
 } )( jQuery );

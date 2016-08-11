@@ -52,7 +52,25 @@ function mention_wp_customize_register( $wp_customize ) {
 		'transport' => 'postMessage',
 	));
 
-	$wp_customize->add_setting('mention_share_text', array(
+    $wp_customize->add_setting('mention_share_text', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_setting('mention_share_icon_1', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_setting('mention_share_icon_2', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'transport' => 'postMessage',
+    ));
+
+	$wp_customize->add_setting('mention_share_icon_3', array(
 		'default' => '',
 		'type' => 'theme_mod',
 		'transport' => 'postMessage',
@@ -108,6 +126,36 @@ function mention_wp_customize_register( $wp_customize ) {
 			'settings' => 'mention_share_text',
 		)
 	));
+
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        'mention_share_icon_1_control',
+        array(
+            'label' => __('Icon Class Name e.g. fa-twitter', 'mention-wp'),
+            'section' => 'mention_social',
+            'settings' => 'mention_share_icon_1',
+        )
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        'mention_share_icon_2_control',
+        array(
+            'label' => __('Icon Class Name e.g. fa-facebook', 'mention-wp'),
+            'section' => 'mention_social',
+            'settings' => 'mention_share_icon_2',
+        )
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Control(
+        $wp_customize,
+        'mention_share_icon_3_control',
+        array(
+            'label' => __('Icon Class Name e.g. fa-google-plus', 'mention-wp'),
+            'section' => 'mention_social',
+            'settings' => 'mention_share_icon_3',
+        )
+    ));
 
 }
 add_action( 'customize_register', 'mention_wp_customize_register' );

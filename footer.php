@@ -1,7 +1,16 @@
         <footer>
           <div class="firstfooter">
            <div class="footerMenu">
-             <?php //navigation here ?>
+              <nav role="navigation" class="homeNav nav">
+                <div class="navLinks-wrap">
+                  <div class="navLinks">
+                      <?php if ( has_nav_menu( 'footer' ) ) { 
+                        wp_nav_menu( array( 'theme_location' => 'footer', 'menu_class' => 'onlyLinks', 'container' => '', 'depth' => 1
+                        ) );
+                       } ?>
+                  </div>
+                </div>
+              </nav>
            </div>
           </div>
           <div class="lastfooter">
@@ -9,9 +18,15 @@
               <div class="connect">
                 <span><?php echo get_theme_mod( 'mention_share_text', __( 'Connect With Us:', 'mention-wp' ) ); ?></span>
                 <!-- Here put link to your social profiles (href="http://example.com/") -->
-                <a class="lastfooterSocial" target="_blank" href="#"><i class="icon fa fa-twitter"></i></a>
-                <a class="lastfooterSocial" target="_blank" href="#"><i class="icon fa fa-facebook"></i></a>
-                <a class="lastfooterSocial" target="_blank" href="#"><i class="icon fa fa-google-plus"></i></a>
+                <?php //if ( get_theme_mod( 'mention_share_icon_1' ) ) { ?>
+                    <a class="lastfooterSocial social-icon-1" target="_blank" href="#"><i class="icon fa <?php echo get_theme_mod( 'mention_share_icon_1', 'fa-twitter' ); ?>"></i></a>
+                <?php //} ?>
+                <?php //if ( get_theme_mod( 'mention_share_icon_2' ) ) { ?>
+                    <a class="lastfooterSocial social-icon-2" target="_blank" href="#"><i class="icon fa <?php echo get_theme_mod( 'mention_share_icon_2', 'fa-facebook' ); ?>"></i></a>
+                <?php //} ?>
+                <?php //if ( get_theme_mod( 'mention_share_icon_3' ) ) { ?>
+                    <a class="lastfooterSocial social-icon-3" target="_blank" href="#"><i class="icon fa <?php echo get_theme_mod( 'mention_share_icon_3', 'fa-google-plus' ); ?>"></i></a>
+                <?php //} ?>
               </div>
               <div class="creators">
                 <?php //srip tags allowed tags here for copy right text; ?>
