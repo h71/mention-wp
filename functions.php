@@ -84,6 +84,7 @@ function mention_wp_public_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'mention_wp_public_assets' );
 
+add_image_size( 'mention-blog', 655, 320 );
 
 /**
  * Customizer additions.
