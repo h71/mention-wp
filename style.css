@@ -1123,8 +1123,7 @@ footer {
     transition: all .3s ease-in-out
 }
 
-.invisibleImg {
-    visibility: hidden;
+.post-thumbnail {
     display: block;
     width: 100%;
     height: auto
