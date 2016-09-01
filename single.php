@@ -52,6 +52,8 @@
         </div>
 </section>
 
+<?php comments_template(); ?>
+
 </main>
 <?php wp_reset_postdata(); endwhile; ?>
 <?php get_footer(); ?>
