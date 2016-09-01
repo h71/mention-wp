@@ -1,4 +1,4 @@
-        <footer>
+        <footer class="footer">
           <div class="firstfooter">
            <div class="footerMenu">
               <nav role="navigation" class="homeNav nav">
